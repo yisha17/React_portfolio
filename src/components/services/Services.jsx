@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './services.css';
 
 const Services = () => {
+    const [toggleState,setToggleState] = useState(0);
+    const toggleTab = (index) =>{
+        setToggleState(index);
+    }
   return (
     <section className='services section' id='services'>
          <h1 className="section_title">Services</h1>
@@ -9,15 +14,15 @@ const Services = () => {
         <div className="services_container container grid">
             <div className="services_content">
                 <div>
-                    <i className="uil uil services_icon"></i>
-                    <div className="services_title"></div>
+                    <i className="uil uil-web-grid services_icon"></i>
+                    <h3 className="services_title">Product <br/> Designer</h3>
                 </div>
-                <span className="services_button">View More 
+                <span className="services_button" onClick={() => toggleTab(1)}>View More 
                 <i className="uil uil-arrow-right"></i></span>
-                <div className="services_modal">
+                <div className={toggleState === 1 ? "services_modal active-modal" : "services_modal"}>
                     <div className="service_modal-content">
-                        <i className="uil uil-times services_modal-close"></i>
-                        <h3 className="services_modal-title"></h3>
+                        <i onClick={() => toggleTab(0)} className="uil uil-times services_modal-close"></i>
+                        <h3 className="services_modal-title">Product Designer</h3>
                         <p className="services_modal-description">
                             services with more than 3 years of experience. Providing quality work to clients and companies.
                         </p>
@@ -32,7 +37,7 @@ const Services = () => {
                             <li className="service_modal-service">
                                 <i className="uil uil-check-circle services_modal-icon"></i>
                                 <p className="services_modal-info">
-                                    Iweb Page development.
+                                    Web Page development.
                                 </p>
                             </li>
 
@@ -60,18 +65,17 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-
             <div className="services_content">
                 <div>
-                    <i className="uil uil services_icon"></i>
-                    <div className="services_title"></div>
+                    <i className="uil uil-arrow services_icon"></i>
+                    <h3 className="services_title">Ui/Ux <br/> Designer</h3>
                 </div>
-                <span className="services_button">View More 
+                <span className="services_button" onClick={() => toggleTab(1)}>View More 
                 <i className="uil uil-arrow-right"></i></span>
-                <div className="services_modal">
+                <div className={toggleState === 1 ? "services_modal active-modal" : "services_modal"}>
                     <div className="service_modal-content">
-                        <i className="uil uil-times services_modal-close"></i>
-                        <h3 className="services_modal-title"></h3>
+                        <i onClick={() => toggleTab(0)} className="uil uil-times services_modal-close"></i>
+                        <h3 className="services_modal-title">Ui/Ux Designer</h3>
                         <p className="services_modal-description">
                             services with more than 3 years of experience. Providing quality work to clients and companies.
                         </p>
@@ -86,7 +90,7 @@ const Services = () => {
                             <li className="service_modal-service">
                                 <i className="uil uil-check-circle services_modal-icon"></i>
                                 <p className="services_modal-info">
-                                    Iweb Page development.
+                                    Web Page development.
                                 </p>
                             </li>
 
@@ -114,18 +118,17 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-
             <div className="services_content">
                 <div>
-                    <i className="uil uil services_icon"></i>
-                    <div className="services_title"></div>
+                    <i className="uil uil-edit services_icon"></i>
+                    <h3 className="services_title">Visual<br/> Designer</h3>
                 </div>
-                <span className="services_button">View More 
+                <span className="services_button" onClick={() => toggleTab(1)}>View More 
                 <i className="uil uil-arrow-right"></i></span>
-                <div className="services_modal">
+                <div className={toggleState === 1 ? "services_modal active-modal" : "services_modal"}>
                     <div className="service_modal-content">
-                        <i className="uil uil-times services_modal-close"></i>
-                        <h3 className="services_modal-title"></h3>
+                        <i onClick={() => toggleTab(0)} className="uil uil-times services_modal-close"></i>
+                        <h3 className="services_modal-title">Visual Designer</h3>
                         <p className="services_modal-description">
                             services with more than 3 years of experience. Providing quality work to clients and companies.
                         </p>
@@ -140,7 +143,7 @@ const Services = () => {
                             <li className="service_modal-service">
                                 <i className="uil uil-check-circle services_modal-icon"></i>
                                 <p className="services_modal-info">
-                                    Iweb Page development.
+                                    Web Page development.
                                 </p>
                             </li>
 
